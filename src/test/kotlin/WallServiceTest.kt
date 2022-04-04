@@ -1,7 +1,5 @@
 import org.junit.After
-import org.junit.Assert.assertEquals
-import org.junit.Assert.assertNotEquals
-import org.junit.Before
+import org.junit.Assert.*
 import org.junit.Test
 
 class WallServiceTest {
@@ -23,59 +21,60 @@ class WallServiceTest {
             1,
             1,
             false,
-            1,
+            null,
+            null,
+            null,
+            null,
+            null,
             "",
             1,
-            1,
-            1,
-            "",
-            1,
             false,
             false,
             false,
             1,
             false,
             false,
-            "",
+            null,
             1
         )
         val expectedPostId = 0
         // act
         val actualPostId = WallService.add(post)
         // assert
-//        assertEquals(expectedPostId, actualPostId.id)
         assertNotEquals(expectedPostId, actualPostId.id)
     }
 
     @Test
     fun updating_an_existing_post() {
         // arrange
-        WallService.add(Post(
-            0,
-            1,
-            1,
-            1,
-            1,
-            "",
-            1,
-            1,
-            false,
-            1,
-            "",
-            1,
-            1,
-            1,
-            "",
-            1,
-            false,
-            false,
-            false,
-            1,
-            false,
-            false,
-            "",
-            1
-        ))
+        WallService.add(
+            Post(
+                0,
+                1,
+                1,
+                1,
+                1,
+                "",
+                1,
+                1,
+                false,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "",
+                1,
+                false,
+                false,
+                false,
+                1,
+                false,
+                false,
+                null,
+                1
+            )
+        )
         val postUpdate = Post(
             1,
             1,
@@ -86,11 +85,11 @@ class WallServiceTest {
             1,
             1,
             false,
-            1,
-            "test",
-            1,
-            1,
-            1,
+            null,
+            null,
+            null,
+            null,
+            null,
             "",
             1,
             false,
@@ -99,14 +98,13 @@ class WallServiceTest {
             1,
             false,
             false,
-            "",
+            null,
             1
         )
-        val expectedUpdatePost = true
         // act
         val actualUpdatePost = WallService.update(postUpdate)
         // assert
-        assertEquals(expectedUpdatePost, actualUpdatePost)
+        assertTrue(actualUpdatePost)
     }
 
     @Test
@@ -122,11 +120,11 @@ class WallServiceTest {
             1,
             1,
             false,
-            1,
-            "test",
-            1,
-            1,
-            1,
+            null,
+            null,
+            null,
+            null,
+            null,
             "",
             1,
             false,
@@ -135,7 +133,7 @@ class WallServiceTest {
             1,
             false,
             false,
-            "",
+            null,
             1
         )
         val expectedUpdatePost = false
